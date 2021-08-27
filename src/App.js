@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import { ApolloProvider } from '@apollo/client';
+import React from 'react';
 import './App.css';
+import Header from './Components/Header/HeaderComponent';
+import ListComponent from './Components/List/ListComponent';
+import client from './Configuration/apollo';
 
 function App() {
+
+  const [state, setState] = React.useState({
+    data: [],
+    current: null,
+    text: ""
+  });
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Header setState={setState} state={state} />
+        <ListComponent  setState={setState} state={state} />
       </header>
     </div>
   );
 }
 
-export default App;
+
+
+export default function ApolloApp() {
+  return (
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+  )
+};

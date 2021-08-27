@@ -1,6 +1,18 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation 
+
+In the project directory, you can run:
+
+### `yarn install`
+
+Create a .env file on root folder with:
+
+```
+    REACT_APP_GITHUB_GRAPH=URL_GRAPHQL (https://api.github.com/graphql)
+    REACT_APP_GITHUB_TOKEN=YOUR_ACCESS_TOKEN_HERE
+```
+
 
 ## Available Scripts
 
